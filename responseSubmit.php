@@ -18,7 +18,7 @@ if($_POST["risk"] == "on"){
   $risk = true;
 }
 
-$distress = false
+$distress = false;
 if($_POST["distress"] == "on"){
   $distress = true;
 }
