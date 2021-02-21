@@ -50,7 +50,19 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
       //Pass location to php
-      navigator.geolocation.getCurrentPosition(showPosition);
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        document.cookie = "Geolocation is not supported by this browser.";
+      }
+
+      function showPosition(position) {
+        console.log(position.coords.latitude);
+        document.cookie(position.coords.latitude);
+        console.log(position.coords.longitude);
+        document.cookie(position.coords.longitude);
+      }
     </script>
 </body>
 
