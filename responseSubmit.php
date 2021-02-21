@@ -7,7 +7,7 @@ print_r($_POST);
 //Column logic
 $animal = $_POST["animal"];
 if($animal == "Other"){
-  $animal = $POST["animal_other"];
+  $animal = $_POST["animal_other"];
 }
 
 $risk = "No";
