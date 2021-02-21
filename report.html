@@ -18,7 +18,7 @@
         <form action="responseSubmit.php" method="POST">
             <h2 class="text-center">Wildlife Tracking Report</h2>
             <div class="form-group" style="text-align: left;"><label style="margin-bottom: 0px;">* Animal Observed:</label>
-              <select class="form-control" style="margin-bottom: 12px;" required name="animal">
+              <select id="select" onchange="selectChange()" class="form-control" style="margin-bottom: 12px;" required name="animal">
                     <option value="" selected="">- Select an Option -</option>
                     <option value="Bat">Bat</option>
                     <option value="Bird">Bird</option>
@@ -27,9 +27,9 @@
                     <option value="Coyote">Coyote</option>
                     <option value="Dear">Deer</option>
                     <option value="Wolf">Wolf</option>
-                    <option value="">Other</option>
+                    <option value="Other">Other</option>
                 </select>
-                <input class="form-control" type="text" name="animal_other" placeholder="Other animal..." style="display:none">
+                <input class="form-control" type="text" name="animal_other" placeholder="Other animal..." id="other-textbox" style="display:none">
                 <input class="form-control" type="text" name="species" placeholder="Species (optional)" style="padding-bottom: 12px;padding-top: 12px;margin-top: 22px;">
                 <label style="padding-top: 22px;">If any of the following are selected, a copy of this report will automatically be forwarded to your municipal government for review.</label>
                 <div class="form-check">
@@ -71,6 +71,19 @@
         document.cookie = "lat=" + position.coords.latitude;
         console.log("long=" + position.coords.longitude);
         document.cookie = "long=" + position.coords.longitude;
+      }
+
+      //Unhide other animals box when other is selected from dropdown
+      var select = document.getElementById("select");
+      var otherTextbox = document.getElementById("other-textbox");
+      function selectChange(){
+        if(select.value == "Other"){
+          console.log('other selected');
+          otherTextbox.style.display = "block";
+        }
+        else {
+          otherTextbox.style.display = "none";
+        }
       }
     </script>
 </body>
