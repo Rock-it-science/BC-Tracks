@@ -40,12 +40,12 @@ $sql = "INSERT INTO reports VALUES (
 echo($sql);
 
 // Execute Query
-pg_query($sql) or die('Query failed: ' . pg_last_error());
+//pg_query($sql) or die('Query failed: ' . pg_last_error());
 
 pg_close($conn);
 
 // Redirect back to main page
-header("Location: index.html");
+//header("Location: index.html");
 die();
 
 
