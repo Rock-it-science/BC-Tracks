@@ -29,7 +29,7 @@
                     <option value="Wolf">Wolf</option>
                     <option value="">Other</option>
                 </select>
-                <input class="form-control" type="text" name="animal_other" placeholder="Other animal...">
+                <input class="form-control" type="text" name="animal_other" placeholder="Other animal..." style="display:none">
                 <input class="form-control" type="text" name="species" placeholder="Species (optional)" style="padding-bottom: 12px;padding-top: 12px;margin-top: 22px;">
                 <label style="padding-top: 22px;">If any of the following are selected, a copy of this report will automatically be forwarded to your municipal government for review.</label>
                 <div class="form-check">
@@ -63,7 +63,7 @@
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
       } else {
-        document.cookie = "Geolocation is not supported by this browser.";
+        alert("Please refresh and accept location to submit a report");
       }
 
       function showPosition(position) {
