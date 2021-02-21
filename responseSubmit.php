@@ -71,8 +71,8 @@ pg_query($sql) or die('Query failed: ' . pg_last_error());
 pg_close($conn);
 
 // Thank user for leaving report
-echo('<script>alert("Thank you for leaving a report")</script>');
-sleep(3);
+echo('<script>alert("Thank you for leaving a report");</script>');
+sleep(2);
 // Redirect back to main page
 header("Location: index.html");
 die();
