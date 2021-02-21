@@ -10,7 +10,7 @@ if($conn->connect_error){
   die("Connection failed: ". $conn->connect_error);
 }
 */
-echo($species);
+print_r($_POST);
 
 /*$sql = "INSERT INTO responses VALUES ('$response')";
 if($conn->query($sql) === TRUE){
