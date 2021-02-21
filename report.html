@@ -59,9 +59,9 @@
 
       function showPosition(position) {
         console.log("lat=" + position.coords.latitude);
-        document.cookie = position.coords.latitude;
+        document.cookie = "lat=" + position.coords.latitude;
         console.log("long=" + position.coords.longitude);
-        document.cookie = position.coords.longitude;
+        document.cookie = "long=" + position.coords.longitude;
       }
     </script>
 </body>
