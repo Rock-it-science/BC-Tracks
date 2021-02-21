@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BC Tracks Report</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <section class="contact-clean">
+        <form method="post">
+            <h2 class="text-center">Wildlife Tracking Report</h2>
+            <div class="form-group" style="text-align: left;"><label style="margin-bottom: 0px;">* Animal Observed:</label><select class="form-control" style="margin-bottom: 12px;" required="">
+                    <option value="" selected="">- Select an Option -</option>
+                    <option value="Bat">Bat</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Bear">Bear</option>
+                    <option value="Cougar">Cougar</option>
+                    <option value="Coyote">Coyote</option>
+                    <option value="Dear">Dear</option>
+                    <option value="Wolf">Wolf</option>
+                    <option value="">Other</option>
+                </select><input class="form-control" type="text" name="species_other" placeholder="Other animal..."><input class="form-control" type="text" name="species" placeholder="Species (optional)" style="padding-bottom: 12px;padding-top: 12px;margin-top: 22px;"><label style="padding-top: 22px;">If any of the following are selected, a copy of this report will automatically be forwarded to your municipal government for review.</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Does the animal pose a risk to public safety? (i.e. the animal appears to be aggressive or is a large predatory species such as a bear or cougar in an urban area)</label></div>
+                <div class="form-check" style="padding-top: 12px;"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Does the animal appear to be injured, in distress, or show visible signs of disease?</label></div>
+            </div><label>You can choose to provide your contact information to receive a follow up on your report from your municipal government.</label><input class="form-control" type="text" name="name" placeholder="Name"><input class="form-control" type="text" name="email" placeholder="Email" style="padding-bottom: 6px;">
+            <div class="form-group"><textarea class="form-control" name="notes" placeholder="Additional Notes" rows="14"></textarea></div>
+            <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
+        </form>
+        <footer class="footer-basic">
+            <ul class="list-inline text-center">
+                <li class="list-inline-item"><a href="index.html">Home</a></li>
+                <li class="list-inline-item"></li>
+                <li class="list-inline-item text-center"><a href="#">About</a></li>
+                <li class="list-inline-item"></li>
+                <li class="list-inline-item"></li>
+            </ul>
+            <p class="copyright">BC Tracks - BC Hacks 2.0&nbsp; &nbsp; &nbsp;2021</p>
+        </footer>
+    </section>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
