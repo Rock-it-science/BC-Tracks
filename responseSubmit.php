@@ -4,7 +4,7 @@ echo("submitting response");
 //Submit response to database
 print_r($_POST);
 
-echo("\n" . $_COOKIE['long'] . ", " . $_COOKIE['lat'] . ", " . date(y-n-j H:i:s) .",
+echo("\n" . $_COOKIE['long'] . ", " . $_COOKIE['lat'] . ", " . date('y-n-j H:i:s') .",
   ". $_POST['animal'] .",
   ". $_POST['species'] .",
   ". $_POST['notes'] .",
