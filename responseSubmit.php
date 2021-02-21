@@ -43,7 +43,7 @@ echo($sql);
 pg_query($sql) or die('Query failed: ' . pg_last_error());
 
 //Email if risk
-if($risk == "Yes"){
+/*if($risk == "Yes"){
   //Check for municipality
   $sql2 = '
   WITH mb AS (
@@ -65,13 +65,16 @@ if($risk == "Yes"){
   $result = pg_query($sql2);
   $zone = pg_fetch_array($result, null, PGSQL_ASSOC);
   print_r($zone);
-}
+}*/
 
 
 pg_close($conn);
 
+// Thank user for leaving report
+echo '<script>alert("Thank you for leaving a report")</script>';
+
 // Redirect back to main page
-//header("Location: index.html");
+header("Location: index.html");
 die();
 
 
