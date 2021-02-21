@@ -48,4 +48,8 @@ pg_query($sql) or die('Query failed: ' . pg_last_error());
 
 pg_close($conn);
 
+header("Location: index.html");
+die();
+
+
 ?>
