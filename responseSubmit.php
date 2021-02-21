@@ -35,7 +35,7 @@ $sql = "INSERT INTO reports VALUES (
   ST_GEOMFROMTEXT('MULTIPOINT(" . $_COOKIE['long'] . " " . $_COOKIE['lat'] . ")'),
   '" . $risk ."',
   '". $distress ."',
-  '".date('Y-n-j H:i:s').'),
+  '".date('Y-n-j H:i:s')."'),
   '". $_POST['animal'] ."',
   '". $_POST['species'] ."',
   '". $_POST['notes'] ."',
