@@ -42,37 +42,12 @@ echo($sql);
 // Execute Query
 pg_query($sql) or die('Query failed: ' . pg_last_error());
 
-//Email if risk
-/*if($risk == "Yes"){
-  //Check for municipality
-  $sql2 = '
-  WITH mb AS (
-  	SELECT
-  		id,
-  		"ED_NAME",
-  		(dumped).geom AS poly
-  	FROM (SELECT id, "ED_NAME", ST_DUMP(geom) AS dumped FROM municipal_boundaries) s
-  )
-
-  SELECT r.qc_id, r."Risk", r."Animal", mb."ED_NAME", mb.id
-  FROM
-  	reports r
-  	CROSS JOIN mb
-  WHERE
-  	ST_CONTAINS(ST_TRANSFORM(mb.poly, ST_SRID(r.wkb_geometry)), r.wkb_geometry)
-  	AND qc_id = (SELECT MAX(qc_id) FROM reports)
-  ';
-  $result = pg_query($sql2);
-  $zone = pg_fetch_array($result, null, PGSQL_ASSOC);
-  print_r($zone);
-}*/
-
 
 pg_close($conn);
 
 // Thank user for leaving report
-echo('<script>alert("Thank you for leaving a report");</script>');
-sleep(2);
+//echo('<script>alert("Thank you for leaving a report");</script>');
+//sleep(2);
 // Redirect back to main page
 header("Location: index.html");
 die();
