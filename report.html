@@ -58,9 +58,9 @@
       }
 
       function showPosition(position) {
-        console.log(position.coords.latitude);
+        console.log("lat=" + position.coords.latitude);
         document.cookie(position.coords.latitude);
-        console.log(position.coords.longitude);
+        console.log("long=" + position.coords.longitude);
         document.cookie(position.coords.longitude);
       }
     </script>
