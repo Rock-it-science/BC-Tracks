@@ -30,10 +30,10 @@ if($_POST["distress"] == "on"){
 
 
 
-/*"INSERT INTO responses VALUES (
+$sql = "INSERT INTO responses VALUES (
   (SELECT MAX(qc_id) + 1 FROM reports),
-  ST_GEOMFROMTEXT(\'MULTIPOINT(" . $_COOKIE['long'] . " " . $_COOKIE['lat'] . "\'),*/
-$sql = "'" . $risk ."',
+  ST_GEOMFROMTEXT('MULTIPOINT(" . $_COOKIE['long'] . " " . $_COOKIE['lat'] . "'),
+  "'" . $risk ."',
   '". $distress ."',
   DATETIME(".date('Y-n-j H:i:s')."),
   '". $_POST['animal'] ."',
