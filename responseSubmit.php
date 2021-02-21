@@ -64,7 +64,7 @@ if($risk == "Yes"){
   ';
   $result = pg_query($sql2);
   $zone = pg_fetch_array($result, null, PGSQL_ASSOC);
-  echo($zone);
+  print_r($zone);
 }
 
 
