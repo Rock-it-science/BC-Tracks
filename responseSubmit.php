@@ -14,16 +14,16 @@ flush();
 
 //Column logic
 $risk = false;
-if($_POST["risk"] = "on"){
+if($_POST["risk"] == "on"){
   $risk = true;
 }
 
 $distress = false
-if($_POST["distress"] = "on"){
+if($_POST["distress"] == "on"){
   $distress = true;
 }
 
-echo($risk . ", " . $distress);
+echo(", " . $risk . ", " . $distress);
 
 /*$conn = pg_connect('host=' . $_ENV["db_servername"] . '  dbname=' . $_ENV["db_name"] . ' user=' . $_ENV["db_username"] . ' password=' . $_ENV["db_password"])
  or die("Connection failed: " . pg_last_error());
