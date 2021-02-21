@@ -6,7 +6,7 @@ print_r($_POST);
 
 //Column logic
 $animal = $_POST["animal"];
-if($_POST["animal_other"] != ""){
+if(!empty($_POST["animal_other"])){
   $animal = $POST["animal_other"];
 }
 
