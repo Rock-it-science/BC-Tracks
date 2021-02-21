@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>
+    BC Tracks - About
+  </title>
+</head>
+<body style="background-color:#1484C3;">
+  <div id="logo" style="text-align:center">
+    <img src="assets/img/BC Tracks Logo Cropped.png" height="20%">
+  </div>
+  
+  <div style= "background-color: white; transparency: 30%; border-radius: 20px;>
+  
+  </div>
+  
+  <footer class="footer-basic">
+      <ul class="list-inline text-center">
+          <li class="list-inline-item"><a href="index.html">Home</a></li>
+          <li class="list-inline-item"></li>
+          <li class="list-inline-item text-center"><a href="#">About</a></li>
+          <li class="list-inline-item"></li>
+          <li class="list-inline-item"></li>
+      </ul>
+      <p class="copyright">BC Tracks - BC Hacks 2.0&nbsp; &nbsp; &nbsp;2021</p>
+  </footer>
+</body>
+</html>
