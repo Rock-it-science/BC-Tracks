@@ -4,12 +4,12 @@ echo("submitting response");
 //Submit response to database
 print_r($_POST);
 
-echo("\n" . $_COOKIE['long'] . ", " . $_COOKIE['lat'] .time() .",
-  ". $_POST['Animal'] .",
-  ". $_POST['Species'] .",
-  ". $_POST['Notes'] .",
-  ". $_POST['Name'] .",
-  ". $_POST['Email']);
+echo("\n" . $_COOKIE['long'] . ", " . $_COOKIE['lat'] . ", " . date(y-n-j H:i:s) .",
+  ". $_POST['animal'] .",
+  ". $_POST['species'] .",
+  ". $_POST['notes'] .",
+  ". $_POST['name'] .",
+  ". $_POST['email']);
 flush();
 
 //Column logic
