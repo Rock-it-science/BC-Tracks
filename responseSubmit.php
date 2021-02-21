@@ -5,6 +5,11 @@ echo("submitting response");
 print_r($_POST);
 
 //Column logic
+$animal = $_POST["animal"];
+if($_POST["animal_other"] != ""){
+  $animal = $POST["animal_other"];
+}
+
 $risk = "No";
 if($_POST["risk"] == "on"){
   $risk = "Yes";
@@ -26,7 +31,7 @@ $sql = "INSERT INTO reports VALUES (
   '" . $risk ."',
   '". $distress ."',
   '".date('Y-n-j H:i:s')."',
-  '". $_POST['animal'] ."',
+  '". $animal ."',
   '". $_POST['species'] ."',
   '". $_POST['notes'] ."',
   '". $_POST['name'] ."',
