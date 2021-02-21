@@ -72,7 +72,7 @@ pg_close($conn);
 
 // Thank user for leaving report
 echo '<script>alert("Thank you for leaving a report")</script>';
-
+sleep(3);
 // Redirect back to main page
 header("Location: index.html");
 die();
