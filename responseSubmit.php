@@ -3,7 +3,7 @@ echo("submitting response");
 
 //Submit response to database
 print_r($_POST);
-echo('host=' . $_ENV["db_servername"] . '  dbname=' . $_ENV["db_name"] . ' user=' . $_ENV["db_username"] . ' password=' . $_ENV["db_password"]);
+flush();
 
 $conn = pg_connect('host=' . $_ENV["db_servername"] . '  dbname=' . $_ENV["db_name"] . ' user=' . $_ENV["db_username"] . ' password=' . $_ENV["db_password"])
  or die("Connection failed: " . pg_last_error());
