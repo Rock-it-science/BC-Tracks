@@ -2,7 +2,7 @@
 echo("submitting response");
 
 //Submit response to database
-$species = $_POST["species"];
+$species = $_POST['species'];
 
 /*$conn = new mysqli($_ENV["db_servername"], $_ENV["db_username"], $_ENV["db_password"], $_ENV["db_name"]);
 
