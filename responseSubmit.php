@@ -20,7 +20,14 @@ if($_POST["distress"] = "true"){
 $conn = pg_connect('host=' . $_ENV["db_servername"] . '  dbname=' . $_ENV["db_name"] . ' user=' . $_ENV["db_username"] . ' password=' . $_ENV["db_password"])
  or die("Connection failed: " . pg_last_error());
 
-$sql = "INSERT INTO responses VALUES (
+echo($_COOKIE['long'] . ", " . $_COOKIE['lat'] . ", " . $risk . ", " . $distress . ", " .   DATETIME(".time().") .",
+  ". $_POST['Animal'] .",
+  ". $_POST['Species'] .",
+  ". $_POST['Notes'] .",
+  ". $_POST['Name'] .",
+  ". $_POST['Email']);
+
+/*$sql = "INSERT INTO responses VALUES (
   (SELECT MAX(qc_id) + 1 FROM reports),
   ST_GEOMFROMTEXT(\"MULTIPOINT(" . $_COOKIE['long'] . " " . $_COOKIE['lat'] . "\"),
   ". $Risk .",
@@ -32,7 +39,8 @@ $sql = "INSERT INTO responses VALUES (
   ". $_POST['Name'] .",
   ". $_POST['Email']"
 )";
-echo($sql);
+
+echo($sql);*/
 
 /*
 if($conn->query($sql) === TRUE){
