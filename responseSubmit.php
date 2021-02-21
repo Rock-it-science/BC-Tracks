@@ -1,5 +1,5 @@
 <?php
-echo("submitting response");
+echo("submitting response\n");
 
 //Submit response to database
 print_r($_POST);
@@ -42,10 +42,36 @@ echo($sql);
 // Execute Query
 pg_query($sql) or die('Query failed: ' . pg_last_error());
 
+//Email if risk
+if($risk == "Yes"){
+  //Check for municipality
+  $sql2 = '
+  WITH mb AS (
+  	SELECT
+  		id,
+  		"ED_NAME",
+  		(dumped).geom AS poly
+  	FROM (SELECT id, "ED_NAME", ST_DUMP(geom) AS dumped FROM municipal_boundaries) s
+  )
+
+  SELECT r.qc_id, r."Risk", r."Animal", mb."ED_NAME", mb.id
+  FROM
+  	reports r
+  	CROSS JOIN mb
+  WHERE
+  	ST_CONTAINS(ST_TRANSFORM(mb.poly, ST_SRID(r.wkb_geometry)), r.wkb_geometry)
+  	AND qc_id = (SELECT MAX(qc_id) FROM reports)
+  ';
+  $result = pg_query($sql2);
+  $zone = pg_fetch_array($result, null, PGSQL_ASSOC);
+  echo $zone;
+}
+
+
 pg_close($conn);
 
 // Redirect back to main page
-header("Location: index.html");
+//header("Location: index.html");
 die();
 
 
