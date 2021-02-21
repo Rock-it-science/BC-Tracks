@@ -25,14 +25,14 @@ if($_POST["distress"] == "on"){
 
 //echo(", " . $risk . ", " . $distress);
 
-/*$conn = pg_connect('host=' . $_ENV["db_servername"] . '  dbname=' . $_ENV["db_name"] . ' user=' . $_ENV["db_username"] . ' password=' . $_ENV["db_password"])
- or die("Connection failed: " . pg_last_error());*/
+$conn = pg_connect('host=' . $_ENV["db_servername"] . '  dbname=' . $_ENV["db_name"] . ' user=' . $_ENV["db_username"] . ' password=' . $_ENV["db_password"])
+ or die("Connection failed: " . pg_last_error());
 
 
 
 $sql = "INSERT INTO responses VALUES (
   (SELECT MAX(qc_id) + 1 FROM reports),
-  ST_GEOMFROMTEXT('MULTIPOINT(" . $_COOKIE['long'] . " " . $_COOKIE['lat'] . "'),
+  ST_GEOMFROMTEXT('MULTIPOINT(" . $_COOKIE['long'] . " " . $_COOKIE['lat'] . ")'),
   '" . $risk ."',
   '". $distress ."',
   DATETIME(".date('Y-n-j H:i:s')."),
@@ -44,14 +44,8 @@ $sql = "INSERT INTO responses VALUES (
 
 echo($sql);
 
-/*if($conn->query($sql) === TRUE){
-  echo "report submitted successfully";
-  header('Location: success.html');
-  redirect();
-} else{
-  echo "Error" . $sql . "<br>" . $conn->error;
-}
+pg_query($sql) or die('Query failed: ' . pg_last_error());
 
-pg_close($conn);*/
+pg_close($conn);
 
 ?>
