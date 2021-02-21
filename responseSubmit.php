@@ -1,19 +1,40 @@
 <?php
 echo("submitting response");
-// Hide credentials in this gitignored file V
-include("credentials.php");
 
 //Submit response to database
-$response = $_REQUEST["response"];
+print_r($_POST);
+echo("\n" . $_COOKIE["long"] . ",  " . $_COOKIE["lat"]);
+flush();
 
-$conn = new mysqli($db_servername, $db_username, $db_password, $db_name);
-
-if($conn->connect_error){
-  die("Connection failed: ". $conn->connect_error);
+//Column logic
+$risk = false
+if($_POST["risk"] = "true"){
+  $risk = true
 }
 
-echo($response);
-/*$sql = "INSERT INTO responses VALUES ('$response')";
+$distress = false
+if($_POST["distress"] = "true"){
+  $distress = true
+}
+
+$conn = pg_connect('host=' . $_ENV["db_servername"] . '  dbname=' . $_ENV["db_name"] . ' user=' . $_ENV["db_username"] . ' password=' . $_ENV["db_password"])
+ or die("Connection failed: " . pg_last_error());
+
+$sql = "INSERT INTO responses VALUES (
+  (SELECT MAX(qc_id) + 1 FROM reports),
+  ST_GEOMFROMTEXT(\"MULTIPOINT(" . $_COOKIE['long'] . " " . $_COOKIE['lat'] . "\"),
+  ". $Risk .",
+  ". $distress .",
+  DATETIME(".time().") .",
+  ". $_POST['Animal'] .",
+  ". $_POST['Species'] .",
+  ". $_POST['Notes'] .",
+  ". $_POST['Name'] .",
+  ". $_POST['Email']"
+)";
+echo($sql);
+
+/*
 if($conn->query($sql) === TRUE){
   echo "report submitted successfully";
   header('Location: success.html');
@@ -22,5 +43,5 @@ if($conn->query($sql) === TRUE){
   echo "Error" . $sql . "<br>" . $conn->error;
 }
 */
-$conn->close();
+pg_close($conn);
  ?>
