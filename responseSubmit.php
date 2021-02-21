@@ -9,7 +9,7 @@ $species = $_REQUEST["species"];
 /*if($conn->connect_error){
   die("Connection failed: ". $conn->connect_error);
 }*/
-echo($_ENV["db_servername");
+echo($_ENV["db_servername"]);
 
 echo($species);
 /*$sql = "INSERT INTO responses VALUES ('$response')";
