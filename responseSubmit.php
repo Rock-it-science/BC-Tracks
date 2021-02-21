@@ -1,7 +1,5 @@
 <?php
 echo("submitting response");
-// Hide credentials in this gitignored file V
-include("credentials.php");
 
 //Submit response to database
 $response = $_REQUEST["response"];
