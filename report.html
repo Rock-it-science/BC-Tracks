@@ -40,12 +40,14 @@
                   <label class="form-check-label" for="formCheck-2">Does the animal appear to be injured, in distress, or show visible signs of disease?</label>
                 </div>
             </div>
-            <label style="margin-bottom:0px"><h5>Contact Info</h5></label>
-            <label style="margin-top:0px;">You can choose to provide your contact information to receive a follow up on your report from your municipal government.</label>
-            <input class="form-control" type="text" name="name" placeholder="Name" style="margin-top: 6px; margin-bottom: 12px;">
-            <input class="form-control" type="text" name="email" placeholder="Email" style="margin-bottom: 22px;">
-            <div class="form-group"><textarea class="form-control" name="notes" placeholder="Additional Notes" rows="14"></textarea></div>
-            <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
+            <div id="contact" style="display:none;">
+              <label style="margin-bottom:0px"><h5>Contact Info</h5></label>
+              <label style="margin-top:0px;">You can choose to provide your contact information to receive a follow up on your report from your municipal government.</label>
+              <input class="form-control" type="text" name="name" placeholder="Name" style="margin-top: 6px; margin-bottom: 12px;">
+              <input class="form-control" type="text" name="email" placeholder="Email" style="margin-bottom: 22px;">
+              <div class="form-group"><textarea class="form-control" name="notes" placeholder="Additional Notes" rows="14"></textarea></div>
+              <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
+            </div>
         </form>
         <footer class="footer-basic">
             <ul class="list-inline text-center">
@@ -85,6 +87,28 @@
           otherTextbox.style.display = "none";
         }
       }
+
+      //Unhide contact info when a checkbox is checked
+      var check1 = document.getElementById("formCheck-1");
+      var check2 = document.getElementById("formCheck-2");
+      var contactDiv = document.getElementById("contact");
+      check1.addEventListener('change', function(){
+        if(this.checked){
+          contactDiv.style.display = "block";
+        }
+        else if(!check2.checked){
+          contactDiv.style.display = "none";
+        }
+      });
+      check2.addEventListener('change', function(){
+        if(this.checked){
+          contactDiv.style.display = "block"
+        }
+        else if(!check2.checked){
+          contactDiv.style.display = "none";
+        }
+      });
+
     </script>
 </body>
 
